@@ -6,15 +6,43 @@ option java_outer_classname = "DesafioPix";
 option objc_class_prefix = "HLW";
 
 package br.com.zup.pix;
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
 
-service DesafioPixService {
-  rpc send (DesafioPixRequest) returns (DesafioPixReply) {}
+service KeyManagerGRPCService {
+  rpc cadastro (ChavePixRequest) returns (ChavePixResponse) {}
 }
 
-message DesafioPixRequest {
-  string name = 1;
+enum TipoChave{
+  DESCONHECIDO_TIPO_CHAVE = 0;
+  CPF = 1;
+  TELEFONE_CELULAR = 2;
+  EMAIL = 3;
+  CHAVE_ALEATORIA = 4;
 }
 
-message DesafioPixReply {
-  string message = 1;
+enum TipoConta{
+  DESCONHECIDO_TIPO_CONTA = 0;
+  CONTA_CORRENTE = 1;
+  CONTA_POUPANCA = 2;
+}
+
+message ChavePixRequest {
+  string idTitular = 1;
+  TipoChave tipoChave  = 2;
+  string chave = 3;
+  TipoConta tipoConta = 4;
+}
+
+message ChavePixResponse {
+  string id = 1;
+}
+
+service KeymanagerRemoveGrpcService  {
+  rpc remove (RemoveChavePixRequest) returns (google.protobuf.Empty) {}
+}
+
+message RemoveChavePixRequest {
+  string idPix = 1;
+  string idTitular     = 2;
 }
