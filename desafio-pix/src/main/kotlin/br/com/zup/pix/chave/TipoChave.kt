@@ -1,6 +1,10 @@
-package br.com.zup.pix
+package br.com.zup.pix.chave
 
-import org.hibernate.validator.internal.constraintvalidators.hv.br.CPFValidator
+
+import br.com.zup.pix.compartilhados.ErroNaValidacao
+import com.google.common.net.HostSpecifier.isValid
+import com.google.common.reflect.Reflection.initialize
+//import org.hibernate.validator.internal.constraintvalidators.hv.br.CPFValidator
 
 enum class TipoChave {
     CPF {

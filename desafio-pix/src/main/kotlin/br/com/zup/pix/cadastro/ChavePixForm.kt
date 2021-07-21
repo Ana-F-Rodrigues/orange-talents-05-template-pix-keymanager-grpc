@@ -1,6 +1,6 @@
 package br.com.zup.pix.cadastro
 
-import br.com.zup.pix.TipoChave
+import br.com.zup.pix.chave.TipoChave
 import br.com.zup.pix.pix.ValidKeyPix
 import io.micronaut.core.annotation.Introspected
 import io.micronaut.core.annotation.NonNull

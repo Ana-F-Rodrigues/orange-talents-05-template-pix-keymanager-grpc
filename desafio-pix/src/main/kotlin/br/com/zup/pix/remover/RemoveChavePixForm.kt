@@ -1,5 +1,6 @@
 package br.com.zup.pix.remover
 
+import br.com.zup.pix.UUIDValido
 import io.micronaut.core.annotation.Introspected
 import javax.validation.constraints.NotNull
 

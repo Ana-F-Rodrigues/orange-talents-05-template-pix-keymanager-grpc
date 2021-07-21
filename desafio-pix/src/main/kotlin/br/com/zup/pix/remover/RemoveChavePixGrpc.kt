@@ -1,11 +1,13 @@
 package br.com.zup.pix.remover
 
+import br.com.zup.pix.KeymanagerRemoveGrpcServiceGrpc
+import br.com.zup.pix.RemoveChavePixRequest
 import com.google.protobuf.Empty
 import io.grpc.stub.StreamObserver
 import javax.inject.Singleton
 
 @Singleton
-@ErrorHandler
+//@ErrorHandler
 class RemoveChavePixGrpc(
     val removeChavePixService: RemoveChavePixService
 ): KeymanagerRemoveGrpcServiceGrpc.KeymanagerRemoveGrpcServiceImplBase() {
