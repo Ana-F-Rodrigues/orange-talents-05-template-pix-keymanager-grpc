@@ -1,0 +1,24 @@
+micronaut:
+  application:
+    name: pix
+
+grpc:
+  server:
+    port: ${SERVER_PORT:50051}
+    keep-alive-time: 1h
+    max-inbound-massage-size: 1024
+
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/banco_pix
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 'password'
+    schema-generate: CREATE_DROP
+    dialect: MYSQL
+jpa.default.properties.hibernate.hbm2ddl.auto: create-drop
+jpa.default.properties.hibernate.show_sql: true
+
+
+itau.contas.url: http://localhost:9091
+bcb.pix.url: http://localhost:8082
