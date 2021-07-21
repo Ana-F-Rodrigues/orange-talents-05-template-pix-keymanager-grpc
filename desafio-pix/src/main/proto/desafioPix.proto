@@ -46,3 +46,60 @@ message RemoveChavePixRequest {
   string idPix = 1;
   string idTitular     = 2;
 }
+
+service KeymanagerBuscaGrpcService  {
+  rpc buscaPorIdPix(BuscaChavePixPorIdPixRequest) returns (BuscaChavePixResponse) {}
+  rpc buscaPorChave(BuscaChavePixPorChave) returns (BuscaChavePixResponse) {}
+}
+
+service KeymanagerListarGrpcService  {
+  rpc listar(ListaChavesRequest) returns (ListaChavesResponse) {}
+}
+
+message ListaChavesRequest{
+  string idTitular = 1;
+}
+
+message ListaChavesResponse{
+  message ChavesResponse{
+    string idPix = 1;
+    string idTitular = 2;
+    TipoChave tipoChave = 3;
+    string valorChave = 4;
+    TipoConta tipoConta = 5;
+    google.protobuf.Timestamp criadoEm = 6;
+  }
+
+  repeated ChavesResponse chaves = 1;
+}
+
+message BuscaChavePixPorIdPixRequest{
+  string idPix = 1;
+  string idTitular     = 2;
+}
+
+message BuscaChavePixPorChave{
+  string chave = 1;
+}
+
+message BuscaChavePixResponse{
+  message ChavePix {
+    TipoChave tipo        = 1;
+    string chave            = 2;
+    ContaInfo conta         = 3;
+    google.protobuf.Timestamp criadaEm = 4;
+  }
+
+  message ContaInfo {
+    TipoConta tipo     = 1;
+    string instituicao   = 2;
+    string nomeDoTitular = 3;
+    string cpfDoTitular  = 4;
+    string agencia       = 5;
+    string numeroDaConta = 6;
+  }
+
+  string idTitular = 1;
+  string idPix     = 2;
+  ChavePix chave   = 3;
+}

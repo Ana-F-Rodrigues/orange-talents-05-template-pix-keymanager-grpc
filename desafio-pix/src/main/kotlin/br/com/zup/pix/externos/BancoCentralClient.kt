@@ -1,7 +1,6 @@
 package br.com.zup.pix.externos
 
 import br.com.zup.pix.cadastro.ChavePixForm
-import br.com.zup.pix.compartilhados.paraKeyType
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.*

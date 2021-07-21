@@ -19,6 +19,5 @@ datasources:
 jpa.default.properties.hibernate.hbm2ddl.auto: create-drop
 jpa.default.properties.hibernate.show_sql: true
 
-
-itau.contas.url: http://localhost:9091
-bcb.pix.url: http://localhost:8082
+endereco_erp_itau: ${ERP_ITAU:`http://localhost:9091/api/v1`}
+endereco_banco_central: ${BANCO_CENTRAL:`http://localhost:8082/api/v1`}
