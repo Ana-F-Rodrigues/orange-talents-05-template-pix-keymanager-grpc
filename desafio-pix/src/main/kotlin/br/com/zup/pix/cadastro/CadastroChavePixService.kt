@@ -1,5 +1,12 @@
 package br.com.zup.pix.cadastro
 
+import br.com.zup.pix.chave.ChavePix
+import br.com.zup.pix.chave.ChavePixExistenteException
+import br.com.zup.pix.chave.ChavePixRepository
+import br.com.zup.pix.externos.BancoCentralClient
+import br.com.zup.pix.externos.CreatePixKeyRequest
+import br.com.zup.pix.externos.ErpItau
+import br.com.zup.pix.toUUID
 import io.micronaut.validation.Validated
 import javax.inject.Singleton
 import javax.validation.Valid

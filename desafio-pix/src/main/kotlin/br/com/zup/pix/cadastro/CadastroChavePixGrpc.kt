@@ -2,15 +2,17 @@ package br.com.zup.pix.cadastro
 
 import br.com.zup.pix.ChavePixRequest
 import br.com.zup.pix.ChavePixResponse
+import br.com.zup.pix.KeyManagerGRPCServiceGrpc
+import br.com.zup.pix.compartilhados.ErrorHandler
 import br.com.zup.pix.pix.paraChavePixForm
 import io.grpc.stub.StreamObserver
 import javax.inject.Singleton
 
 @Singleton
-//@ErrorHandler
+@ErrorHandler
 class CadastroChavePixGrpc(
     val cadastroChavePixService: CadastroChavePixService
-): KeyManagerGRPCService.KeyManagerGRPCServiceImplBase() {
+): KeyManagerGRPCServiceGrpc.KeyManagerGRPCServiceImplBase() {
 
     override fun cadastro(request: ChavePixRequest, responseObserver: StreamObserver<ChavePixResponse>) {
         val chavePixForm = request.paraChavePixForm()

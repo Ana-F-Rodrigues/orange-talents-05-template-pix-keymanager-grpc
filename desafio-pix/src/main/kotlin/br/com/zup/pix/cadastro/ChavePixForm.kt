@@ -1,7 +1,12 @@
 package br.com.zup.pix.cadastro
 
+import br.com.zup.pix.UUIDValido
+import br.com.zup.pix.chave.ChavePix
+import br.com.zup.pix.chave.ContaAssociada
 import br.com.zup.pix.chave.TipoChave
+import br.com.zup.pix.chave.TipoConta
 import br.com.zup.pix.pix.ValidKeyPix
+import br.com.zup.pix.toUUID
 import io.micronaut.core.annotation.Introspected
 import io.micronaut.core.annotation.NonNull
 import javax.validation.constraints.Size

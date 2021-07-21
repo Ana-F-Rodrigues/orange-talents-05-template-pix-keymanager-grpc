@@ -2,6 +2,8 @@ package br.com.zup.pix.remover
 
 import br.com.zup.pix.chave.ChavePixNaoEncontradaException
 import br.com.zup.pix.chave.ChavePixRepository
+import br.com.zup.pix.externos.BancoCentralClient
+import br.com.zup.pix.toUUID
 import io.micronaut.http.HttpStatus
 import io.micronaut.validation.Validated
 import javax.inject.Singleton

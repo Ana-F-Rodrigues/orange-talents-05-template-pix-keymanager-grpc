@@ -1,10 +1,11 @@
 package br.com.zup.pix.compartilhados
 
 import br.com.zup.pix.chave.TipoChave
+import br.com.zup.pix.externos.keyType
 
 
 private object MaperKeyTypeBcb {
-    val tipoChaveParakeyType: Map<TipoChave,keyType> = mapOf(
+    val tipoChaveParakeyType: Map<TipoChave, keyType> = mapOf(
         TipoChave.CPF to  keyType.CPF,
         TipoChave.TELEFONE_CELULAR to  keyType.PHONE,
         TipoChave.EMAIL to  keyType.EMAIL,
@@ -22,6 +23,6 @@ private object MaperKeyTypeBcb {
 fun TipoChave.paraKeyType() = MaperKeyTypeBcb.tipoChaveParakeyType.get(this)
 fun keyType.paraMeuEnum() = MaperKeyTypeBcb.keyTypeParaTipoChave.get(this)
 
-fun keyType.paraEnumGrpc(): br.com.zup.academy.TipoChave {
-    return br.com.zup.academy.TipoChave.valueOf(this.paraMeuEnum()!!.name)
+fun keyType.paraEnumGrpc(): br.com.zup.pix.TipoChave {
+    return br.com.zup.pix.TipoChave.valueOf(this.paraMeuEnum()!!.name)
 }
