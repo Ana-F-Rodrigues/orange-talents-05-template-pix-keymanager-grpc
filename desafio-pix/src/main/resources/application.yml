@@ -8,12 +8,15 @@ grpc:
     keep-alive-time: 1h
     max-inbound-massage-size: 1024
 
+# com.mysql.jdbc.Driver
+# com.mysql.cj.jdbc.Driver
+
 datasources:
   default:
     url: jdbc:mysql://localhost:3306/banco_pix
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
-    password: 'password'
+    password: password
     schema-generate: CREATE_DROP
     dialect: MYSQL
 jpa.default.properties.hibernate.hbm2ddl.auto: create-drop
