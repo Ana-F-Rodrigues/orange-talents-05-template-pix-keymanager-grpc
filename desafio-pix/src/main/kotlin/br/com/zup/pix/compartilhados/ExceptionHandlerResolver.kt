@@ -1,8 +1,8 @@
 package br.com.zup.pix.compartilhados
 
-
 import br.com.zup.pix.compartilhados.handlers.DefaultExceptionHandler
 import javax.inject.Singleton
+
 
 @Singleton
 class ExceptionHandlerResolver(
